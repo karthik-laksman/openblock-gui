@@ -566,7 +566,7 @@ class MenuBar extends React.Component {
                 <div className={styles.mainMenu}>
                     <div className={classNames(styles.menuBarItem)}>
                         <img
-                            alt="OpenBlock"
+                            alt="Autoblox"
                             className={classNames(styles.openblockLogo, {
                                 [styles.clickable]: typeof this.props.onClickLogo !== 'undefined'
                             })}
@@ -575,21 +575,7 @@ class MenuBar extends React.Component {
                             onClick={this.props.onClickLogo}
                         />
                     </div>
-                    {(this.props.canChangeLanguage) && (<div
-                        className={classNames(styles.menuBarItem, styles.hoverable, styles.languageMenu)}
-                    >
-                        <div>
-                            <img
-                                className={styles.languageIcon}
-                                src={languageIcon}
-                            />
-                            <img
-                                className={styles.languageCaret}
-                                src={dropdownCaret}
-                            />
-                        </div>
-                        <LanguageSelector label={this.props.intl.formatMessage(ariaMessages.language)} />
-                    </div>)}
+
                     {(this.props.canManageFiles) && (
                         <div
                             className={classNames(styles.menuBarItem, styles.hoverable, {
@@ -892,11 +878,26 @@ class MenuBar extends React.Component {
                             onColor={this.props.isToolboxUpdating ||
                                 !this.props.isSupportSwitchMode ? '#888888' : '#008800'}
                             offColor={this.props.isToolboxUpdating ||
-                                !this.props.isSupportSwitchMode ? '#888888' : '#FF8C1A'}
+                                !this.props.isSupportSwitchMode ? '#888888' : '#1556d6'}
                             uncheckedIcon={false}
                             checkedIcon={false}
                         />
                     </div>
+                    {(this.props.canChangeLanguage) && (<div
+                        className={classNames(styles.menuBarItem, styles.hoverable, styles.languageMenu)}
+                    >
+                        <div>
+                            <img
+                                className={styles.languageIcon}
+                                src={languageIcon}
+                            />
+                            <img
+                                className={styles.languageCaret}
+                                src={dropdownCaret}
+                            />
+                        </div>
+                        <LanguageSelector label={this.props.intl.formatMessage(ariaMessages.language)} />
+                    </div>)}
                     {isScratchDesktop() ? (
                         <div
                             className={classNames(styles.menuBarItem, styles.hoverable, {

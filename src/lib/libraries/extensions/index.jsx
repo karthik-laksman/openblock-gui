@@ -19,6 +19,19 @@ import translateInsetIconURL from './translate/translate-small.png';
 import makeymakeyIconURL from './makeymakey/makeymakey.png';
 import makeymakeyInsetIconURL from './makeymakey/makeymakey-small.svg';
 
+import exelauncherIconURL from './exelauncher/makeymakey1.png';
+import exelauncherInsetIconURL from './exelauncher/makeymakey-small1.svg';
+
+import arduinoforIconURL from './arduino1/makeymakey2.png';
+import arduinoforInsetIconURL from './arduino1/makeymakey-small2.svg';
+
+import faceforIconURL from './facedetection/face detection logo.png';
+import faceforInsetIconURL from './facedetection/facedetection-small.svg';
+
+import face_sensforIconURL from './facesensing/facesensing.png';
+import face_sensforInsetIconURL from './facesensing/facesensing-small.svg';
+
+
 // import ev3IconURL from './ev3/ev3.png';
 // import ev3InsetIconURL from './ev3/ev3-small.svg';
 // import ev3ConnectionIconURL from './ev3/ev3-hub-illustration.svg';
@@ -166,7 +179,99 @@ export default [
             />
         ),
         featured: true
+    },
+   /* {
+        name: (
+            <FormattedMessage
+                defaultMessage="EXE Launcher"
+                description="Name for exe-launcher extension"
+                id="gui.extension.exelauncher.name"
+            />
+        ),
+        extensionId: 'exelauncher',
+        collaborator: 'karthik',
+        iconURL: exelauncherIconURL,
+        insetIconURL: exelauncherInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="run any exe files."
+                description="Description for the 'exe launcher' extension"
+                id="gui.extension.exelauncher.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: 'Arduino for Scratch',
+        extensionId: 'arduino1',
+        collaborator: 'karthik',
+        iconURL: arduinoforIconURL,
+        insetIconURL: arduinoforInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Code your Arduino"
+                description="Arduino extension for Scratch"
+                id="gui.extension.arduino.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: true,
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        //connectionIconURL: arduinoforConnectionIconURL,
+        //connectionSmallIconURL: arduinoforConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Connecting to Arduino..."
+                id="gui.extension.arduino.connectingMessage"
+            />
+        ),
+        helpLink: 'https://scratch.mit.edu/arduino'
+    },*/
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Face Detection"
+                description="Name for the 'Facedetection' extension"
+                id="gui.extension.facedetection.name"
+            />
+        ),
+        extensionId: 'facedetection',
+        iconURL: faceforIconURL,
+        insetIconURL: faceforInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Detect the Faces."
+                description="Description for the 'Facedetection' extension"
+                id="gui.extension.facedetection.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Face Sensing"
+                description="Name for the 'FaceSensing' extension"
+                id="gui.extension.faceSensing.name"
+            />
+        ),
+        extensionId: 'faceSensing',
+        iconURL: face_sensforIconURL,
+        insetIconURL: face_sensforInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Sense the Faces."
+                description="Description for the 'FaceSensing' extension"
+                id="gui.extension.faceSensing.description"
+            />
+        ),
+        featured: true
     }
+
     // {
     //     name: 'LEGO MINDSTORMS EV3',
     //     extensionId: 'ev3',

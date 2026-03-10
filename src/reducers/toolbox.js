@@ -2,8 +2,11 @@ const UPDATE_TOOLBOX = 'scratch-gui/toolbox/UPDATE_TOOLBOX';
 const IS_UPDATING = 'scratch-gui/toolbox/IS_UPDATING';
 import makeToolboxXML from '../lib/make-toolbox-xml';
 
+
+
 const initialState = {
     toolboxXML: makeToolboxXML(true),
+
     isToolboxUpdating: false
 };
 

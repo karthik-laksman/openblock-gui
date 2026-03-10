@@ -1,4 +1,5 @@
 import ScratchBlocks from 'openblock-blocks';
+import iconv from 'iconv-lite';
 
 /**
  * Connect scratch blocks with the vm
@@ -352,6 +353,8 @@ export default function (vm) {
     ScratchBlocks.utils.is3dSupported = function () {
         return true;
     };
+
+    ScratchBlocks.iconv = iconv;
 
     return ScratchBlocks;
 }

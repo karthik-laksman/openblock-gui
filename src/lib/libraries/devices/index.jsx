@@ -43,9 +43,9 @@ import esp32IconURL from './esp32/esp32.png';
 import esp32ConnectionIconURLL from './esp32/esp32-illustration.svg';
 import esp32ConnectionSmallIconURL from './esp32/esp32-small.svg';
 
-import esp32S3IconURL from './esp32S3/esp32S3.png';
-import esp32S3ConnectionIconURLL from './esp32S3/esp32S3-illustration.svg';
-import esp32S3ConnectionSmallIconURL from './esp32S3/esp32S3-small.svg';
+import fableIconURL from './fable/fable-kit.png';
+import fableConnectionIconURLL from './fable/fable-illustraion.svg';
+import fableConnectionSmallIconURL from './fable/fable-illustraion-small.svg';
 
 import esp8266NodeMCUIconURL from './esp8266NodeMCU/esp8266NodeMCU.png';
 import esp8266NodeMCUConnectionIconURL from './esp8266NodeMCU/esp8266NodeMCU-illustration.svg';
@@ -62,18 +62,6 @@ import k210MaixduinoConnectionSmallIconURL from './k210Maixduino/k210Maixduino-s
 import raspberryPiPicoIconURL from './raspberryPiPico/raspberryPiPico.png';
 import raspberryPiPicoConnectionIconURL from './raspberryPiPico/raspberryPiPico-illustration.svg';
 import raspberryPiPicoConnectionSmallIconURL from './raspberryPiPico/raspberryPiPico-small.svg';
-
-import raspberryPiPicoWIconURL from './raspberryPiPicoW/raspberryPiPicoW.png';
-import raspberryPiPicoWConnectionIconURL from './raspberryPiPicoW/raspberryPiPicoW-illustration.svg';
-import raspberryPiPicoWConnectionSmallIconURL from './raspberryPiPicoW/raspberryPiPicoW-small.svg';
-
-import raspberryPiPico2IconURL from './raspberryPiPico2/raspberryPiPico2.png';
-import raspberryPiPico2ConnectionIconURL from './raspberryPiPico2/raspberryPiPico2-illustration.svg';
-import raspberryPiPico2ConnectionSmallIconURL from './raspberryPiPico2/raspberryPiPico2-small.svg';
-
-import raspberryPiPico2WIconURL from './raspberryPiPico2W/raspberryPiPico2W.png';
-import raspberryPiPico2WConnectionIconURL from './raspberryPiPico2W/raspberryPiPico2W-illustration.svg';
-import raspberryPiPico2WConnectionSmallIconURL from './raspberryPiPico2W/raspberryPiPico2W-small.svg';
 
 import makeymakeyIconURL from './makeymakey/makeymakey.png';
 import makeymakeyConnectionIconURL from './makeymakey/makeymakey-illustration.svg';
@@ -105,17 +93,53 @@ const deviceData = [
         programLanguage: ['block'],
         tags: ['realtime']
     },
+        {
+        name: 'Fable',
+        deviceId: 'arduinoEsp321',
+        manufactor: 'Beta Tech',
+        learnMore: 'https://www.betatech.in/',
+        type: DeviceType.arduino,
+        iconURL: fableIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="kids friendly robot."
+                description="Description for the fable device"
+                id="gui.device.fable.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: false,
+        serialportRequired: true,
+        defaultBaudRate: '115200',
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: fableConnectionIconURLL,
+        connectionSmallIconURL: fableConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their fable."
+                id="gui.device.fable.connectingMessage"
+            />
+        ),
+        programMode: ['realtime','upload'],
+        programLanguage: ['block', 'c', 'cpp'],
+        tags: ['arduino'],
+        helpLink: 'https://www.betatech.in/'
+    },
     {
         name: 'Arduino Uno',
         deviceId: 'arduinoUno',
         manufactor: 'arduino.cc',
-        learnMore: 'https://docs.arduino.cc/hardware/uno-rev3',
+        learnMore: 'https://store.arduino.cc/usa/arduino-uno-rev3',
         type: DeviceType.arduino,
         iconURL: arduinoUnoIconURL,
         description: (
             <FormattedMessage
                 defaultMessage="A great board to get started with electronics and coding."
-                description="Description for the Arduino Uno Rev3 device"
+                description="Description for the Arduino Uno device"
                 id="gui.device.arduinoUno.description"
             />
         ),
@@ -133,19 +157,19 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.arduinoUno.connectingMessage"
             />
         ),
         programMode: ['realtime', 'upload'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/arduino-uno'
+        helpLink: 'https://store.arduino.cc/usa/arduino-uno-rev3'
     },
     {
         name: 'Arduino Nano',
         deviceId: 'arduinoNano',
         manufactor: 'arduino.cc',
-        learnMore: 'https://docs.arduino.cc/hardware/nano',
+        learnMore: 'https://store.arduino.cc/usa/arduino-nano',
         type: DeviceType.arduino,
         iconURL: arduinoNanoIconURL,
         description: (
@@ -169,19 +193,19 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.arduinoNano.connectingMessage"
             />
         ),
         programMode: ['realtime', 'upload'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/arduino-nano'
+        helpLink: 'https://store.arduino.cc/usa/arduino-nano',
     },
     {
         name: 'Arduino Leonardo',
         deviceId: 'arduinoLeonardo',
         manufactor: 'arduino.cc',
-        learnMore: 'https://docs.arduino.cc/hardware/leonardo',
+        learnMore: 'https://store.arduino.cc/usa/leonardo',
         type: DeviceType.arduino,
         iconURL: arduinoLeonardoIconURL,
         description: (
@@ -205,19 +229,19 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.arduinoLeonardo.connectingMessage"
             />
         ),
         programMode: ['upload'], // due to the software serilport realtim mode is unstable
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/arduino-leonardo'
+        helpLink: 'https://store.arduino.cc/usa/leonardo'
     },
     {
         name: 'Arduino Mega 2560',
         deviceId: 'arduinoMega2560',
         manufactor: 'arduino.cc',
-        learnMore: 'https://docs.arduino.cc/hardware/mega-2560',
+        learnMore: 'https://store.arduino.cc/usa/mega-2560-r3',
         type: DeviceType.arduino,
         iconURL: arduinoMega2560IconURL,
         description: (
@@ -241,13 +265,13 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.arduinoMega2560.connectingMessage"
             />
         ),
         programMode: ['realtime', 'upload'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/arduino-mega-2560-r3'
+        helpLink: 'https://store.arduino.cc/usa/mega-2560-r3'
     },
     {
         name: 'Arduino Uno R4 Minima',
@@ -325,7 +349,7 @@ const deviceData = [
         name: 'ESP32',
         deviceId: 'arduinoEsp32',
         manufactor: 'espressif',
-        learnMore: 'https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/index.html',
+        learnMore: 'https://www.espressif.com/',
         type: DeviceType.arduino,
         iconURL: esp32IconURL,
         description: (
@@ -348,50 +372,14 @@ const deviceData = [
         connectingMessage: (
             <FormattedMessage
                 defaultMessage="Connecting"
-                description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                description="Message to help people connect to their esp32."
+                id="gui.device.esp32.connectingMessage"
             />
         ),
         programMode: ['upload'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/esp32'
-    },
-    {
-        name: 'ESP32-S3',
-        deviceId: 'arduinoEsp32S3',
-        manufactor: 'espressif',
-        learnMore: 'https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/index.html',
-        type: DeviceType.arduino,
-        iconURL: esp32S3IconURL,
-        description: (
-            <FormattedMessage
-                defaultMessage="Integrates a dedicated AI accelerator and rich peripheral set for efficient, low-power IoT edge and AI workloads." // eslint-disable-line max-len
-                description="Description for the esp32-s3 device"
-                id="gui.device.esp32S3.description"
-            />
-        ),
-        featured: true,
-        disabled: false,
-        bluetoothRequired: false,
-        serialportRequired: true,
-        defaultBaudRate: '115200',
-        internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: true,
-        useAutoScan: false,
-        connectionIconURL: esp32S3ConnectionIconURLL,
-        connectionSmallIconURL: esp32S3ConnectionSmallIconURL,
-        connectingMessage: (
-            <FormattedMessage
-                defaultMessage="Connecting"
-                description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
-            />
-        ),
-        programMode: ['upload'],
-        programLanguage: ['block', 'c', 'cpp'],
-        tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/esp32s3'
+        helpLink: 'https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html'
     },
     {
         name: 'NodeMCU',
@@ -421,20 +409,20 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.esp8266NodeMCU.connectingMessage"
             />
         ),
         deviceExtensionsCompatible: 'arduinoEsp8266',
         programMode: ['upload'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/esp8266'
+        helpLink: 'https://arduino-esp8266.readthedocs.io/en/3.0.0/index.html'
     },
     {
         name: 'MaixDock',
         deviceId: 'arduinoK210MaixDock',
         manufactor: 'sipeed',
-        learnMore: 'https://wiki.sipeed.com/hardware/en/maix/maixpy_develop_kit_board/Maix_dock.html',
+        learnMore: 'https://wiki.sipeed.com/',
         type: DeviceType.arduino,
         iconURL: k210MaixDockIconURL,
         description: (
@@ -458,19 +446,19 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.k210MaixDock.connectingMessage"
             />
         ),
         programMode: ['upload'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/maix-dock'
+        helpLink: 'https://wiki.sipeed.com/hardware/zh/maix/maixpy_develop_kit_board/Maix_dock.html'
     },
     {
         name: 'Maixduino',
         deviceId: 'arduinoK210Maixduino',
         manufactor: 'sipeed',
-        learnMore: 'https://wiki.sipeed.com/hardware/en/maix/maixpy_develop_kit_board/maix_duino.html',
+        learnMore: 'https://maixduino.sipeed.com/',
         type: DeviceType.arduino,
         iconURL: k210MaixduinoIconURL,
         description: (
@@ -494,24 +482,24 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.k210Maixduino.connectingMessage"
             />
         ),
         programMode: ['upload'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/maixduino'
+        helpLink: 'https://wiki.sipeed.com/soft/maixpy/en/develop_kit_board/maix_duino.html'
     },
     {
         name: 'Raspberry Pi Pico',
         deviceId: 'arduinoRaspberryPiPico',
         manufactor: 'Raspberry Pi Foundation',
-        learnMore: 'https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#pico-1-technical-specification',
+        learnMore: 'https://www.raspberrypi.com/',
         type: DeviceType.arduino,
         iconURL: raspberryPiPicoIconURL,
         description: (
             <FormattedMessage
-                defaultMessage="A friendly, easy-to-use microcontroller board that brings your electronics ideas to life." // eslint-disable-line max-len
+                defaultMessage="The powerful, flexible microcontroller board."
                 description="Description for the Raspberry Pi Pico device"
                 id="gui.device.raspberryPiPicoIconURL.description"
             />
@@ -530,7 +518,7 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.raspberryPiPicoIconURL.connectingMessage"
             />
         ),
         programMode: ['upload'],
@@ -539,118 +527,10 @@ const deviceData = [
         helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/raspberry-pi-pico'
     },
     {
-        name: 'Raspberry Pi Pico W',
-        deviceId: 'arduinoRaspberryPiPicoW',
-        manufactor: 'Raspberry Pi Foundation',
-        learnMore: 'https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#picow-technical-specification',
-        type: DeviceType.arduino,
-        iconURL: raspberryPiPicoWIconURL,
-        description: (
-            <FormattedMessage
-                defaultMessage="A Pico with built-in 2.4 GHz Wi-Fi and Bluetooth 5.2, perfect for wireless and IoT projects." // eslint-disable-line max-len
-                description="Description for the Raspberry Pi Pico W device"
-                id="gui.device.raspberryPiPicoWIconURL.description"
-            />
-        ),
-        featured: true,
-        disabled: false,
-        bluetoothRequired: false,
-        serialportRequired: true,
-        defaultBaudRate: '9600',
-        internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: true,
-        useAutoScan: false,
-        connectionIconURL: raspberryPiPicoWConnectionIconURL,
-        connectionSmallIconURL: raspberryPiPicoWConnectionSmallIconURL,
-        connectingMessage: (
-            <FormattedMessage
-                defaultMessage="Connecting"
-                description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
-            />
-        ),
-        programMode: ['upload'],
-        programLanguage: ['block', 'c', 'cpp'],
-        tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/raspberry-pi-picow'
-    },
-    {
-        name: 'Raspberry Pi Pico 2',
-        deviceId: 'arduinoRaspberryPiPico2',
-        manufactor: 'Raspberry Pi Foundation',
-        learnMore: 'https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#pico-2-technical-specification',
-        type: DeviceType.arduino,
-        iconURL: raspberryPiPico2IconURL,
-        description: (
-            <FormattedMessage
-                defaultMessage="High-performance dual-core MCU with ample RAM and flash for complex applications." // eslint-disable-line max-len
-                description="Description for the Raspberry Pi Pico 2 device"
-                id="gui.device.raspberryPiPico2IconURL.description"
-            />
-        ),
-        featured: true,
-        disabled: false,
-        bluetoothRequired: false,
-        serialportRequired: true,
-        defaultBaudRate: '9600',
-        internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: true,
-        useAutoScan: false,
-        connectionIconURL: raspberryPiPico2ConnectionIconURL,
-        connectionSmallIconURL: raspberryPiPico2ConnectionSmallIconURL,
-        connectingMessage: (
-            <FormattedMessage
-                defaultMessage="Connecting"
-                description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
-            />
-        ),
-        programMode: ['upload'],
-        programLanguage: ['block', 'c', 'cpp'],
-        tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/raspberry-pi-pico2'
-    },
-    {
-        name: 'Raspberry Pi Pico 2 W',
-        deviceId: 'arduinoRaspberryPiPico2W',
-        manufactor: 'Raspberry Pi Foundation',
-        learnMore: 'https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#pico2w-technical-specification',
-        type: DeviceType.arduino,
-        iconURL: raspberryPiPico2WIconURL,
-        description: (
-            <FormattedMessage
-                defaultMessage="Built-in 2.4 GHz Wi-Fi and Bluetooth for seamless wireless IoT and smart-home integration." // eslint-disable-line max-len
-                description="Description for the Raspberry Pi Pico 2 W device"
-                id="gui.device.raspberryPiPico2WIconURL.description"
-            />
-        ),
-        featured: true,
-        disabled: false,
-        bluetoothRequired: false,
-        serialportRequired: true,
-        defaultBaudRate: '9600',
-        internetConnectionRequired: false,
-        launchPeripheralConnectionFlow: true,
-        useAutoScan: false,
-        connectionIconURL: raspberryPiPico2WConnectionIconURL,
-        connectionSmallIconURL: raspberryPiPico2WConnectionSmallIconURL,
-        connectingMessage: (
-            <FormattedMessage
-                defaultMessage="Connecting"
-                description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
-            />
-        ),
-        programMode: ['upload'],
-        programLanguage: ['block', 'c', 'cpp'],
-        tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/raspberry-pi-pico2w'
-    },
-    {
         name: 'Micro:bit',
         deviceId: 'microbit',
         manufactor: 'microbit.org',
-        learnMore: 'https://tech.microbit.org/hardware',
+        learnMore: 'https://microbit.org/',
         type: DeviceType.microbit,
         iconURL: microbitIconURL,
         description: (
@@ -674,19 +554,19 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.microbit.connectingMessage"
             />
         ),
         programMode: ['upload'],
         programLanguage: ['block', 'microPython'],
         tags: ['microPython'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/microbit'
+        helpLink: 'https://microbit.org/get-started/first-steps/introduction/'
     },
     {
         name: 'Micro:bit V2',
         deviceId: 'microbitV2',
         manufactor: 'microbit.org',
-        learnMore: 'https://tech.microbit.org/hardware/1-5-revision/',
+        learnMore: 'https://microbit.org/',
         type: DeviceType.microbit,
         iconURL: microbitV2IconURL,
         description: (
@@ -710,24 +590,24 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.microbitV2.connectingMessage"
             />
         ),
         programMode: ['upload'],
         programLanguage: ['block', 'microPython'],
         tags: ['microPython'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/microbit-v2'
+        helpLink: 'https://microbit.org/get-started/first-steps/introduction/'
     },
     {
         name: 'Makey Makey',
         deviceId: 'makeyMakey',
         manufactor: 'makeymakey.com',
-        learnMore: 'https://makeymakey.com/pages/how-to',
+        learnMore: 'https://makeymakey.com/',
         type: DeviceType.arduino,
         iconURL: makeymakeyIconURL,
         description: (
             <FormattedMessage
-                defaultMessage="Make anything into a key."
+                defaultMessage="Make anything into a key1."
                 description="Description for the Makey Makey device"
                 id="gui.device.makeymakey.description"
             />
@@ -746,14 +626,52 @@ const deviceData = [
             <FormattedMessage
                 defaultMessage="Connecting"
                 description="Message to help people connect to their device."
-                id="gui.device.connectingMessage"
+                id="gui.device.makeyMakey.connectingMessage"
             />
         ),
         programMode: ['upload'],
         programLanguage: ['block', 'c', 'cpp'],
         tags: ['arduino'],
-        helpLink: 'https://wiki.openblock.cc/general-hardware-guidelines/boards/makeymakey'
+        helpLink: 'https://makeymakey.com'
     },
+
+    {
+        name: 'Makey1 Makey1',
+        deviceId: 'makeyMakey',
+        manufactor: 'makeymakey.com',
+        learnMore: 'https://makeymakey.com/',
+        type: DeviceType.arduino,
+        iconURL: makeymakeyIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Make anything into a key1."
+                description="Description for the Makey Makey device"
+                id="gui.device.makeymakey.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: false,
+        serialportRequired: true,
+        defaultBaudRate: '115200',
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: makeymakeyConnectionIconURL,
+        connectionSmallIconURL: makeymakeyConnectionSmallIconURL,
+        connectingMessage: (
+            <FormattedMessage
+                defaultMessage="Connecting"
+                description="Message to help people connect to their device."
+                id="gui.device.makeyMakey.connectingMessage"
+            />
+        ),
+        programMode: ['upload'],
+        programLanguage: ['block', 'c', 'cpp'],
+        tags: ['arduino'],
+        helpLink: 'https://makeymakey.com'
+    },
+
     /**
      * For those parent devices that exist in VM but are not displayed in GUI
      */

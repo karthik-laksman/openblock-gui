@@ -14,6 +14,8 @@ import extensionLibraryContent from '../lib/libraries/extensions/index.jsx';
 import LibraryComponent from '../components/library/library.jsx';
 import extensionIcon from '../components/action-menu/icon--sprite.svg';
 
+
+
 const messages = defineMessages({
     extensionTitle: {
         defaultMessage: 'Choose an Extension',
@@ -155,8 +157,7 @@ class ExtensionLibrary extends React.PureComponent {
         const filterAndSort = extensions => extensions.filter(extension => {
             if (extension.supportDevice) {
                 return extension.supportDevice.includes(this.props.deviceId) ||
-                extension.supportDevice.includes(device.deviceExtensionsCompatible) ||
-                extension.supportDevice.includes('*');
+                extension.supportDevice.includes(device.deviceExtensionsCompatible);
             }
             return true;
         })

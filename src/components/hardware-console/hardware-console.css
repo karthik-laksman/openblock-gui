@@ -80,10 +80,9 @@
     border: 1px solid $ui-black-transparent;
     box-sizing: border-box;
     border-radius: 0.5rem;
-    background-color: $ui-secondary;
+    /*background-color: $ui-secondary;*/background-color:hsla(0, 0%, 100%,1);
     overflow:hidden;
 }
-
 .console-input:focus {
     outline:none;
     border: 1px solid $ui-transparent;

@@ -6,6 +6,16 @@ const categorySeparator = '<sep gap="36"/>';
 
 const blockSeparator = '<sep gap="36"/>'; // At default scale, about 28px
 
+
+/*const search = function () {
+    return `
+    <category name="Search" id="search" colour="#4C97FF" secondaryColour="#3373CC" custom="SEARCH">
+         <block type="dummy_block"></block>
+        ${categorySeparator}
+    </category>
+    `;
+}; */
+
 /* eslint-disable no-unused-vars */
 const motion = function (isInitialSetup, isStage, targetId) {
     const stageSelected = ScratchBlocks.ScratchMsgs.translate(
@@ -411,7 +421,7 @@ const control = function (isInitialSetup, isStage, targetId, isRealtimeMode) {
         ${blockSeparator}
         ${isRealtimeMode ? `
             <block type="control_stop"/>
-            ${blockSeparator}
+            
             ${isStage ? `
                 <block type="control_create_clone_of">
                     <value name="CLONE_OPTION">
@@ -427,8 +437,31 @@ const control = function (isInitialSetup, isStage, targetId, isRealtimeMode) {
                 </block>
                 <block type="control_delete_this_clone"/>
             `}
+        ` : `
+            <block id="for_Loop" type="control_for_Loop">
+                <value name="VAR">
+                    <shadow type="variables_get">
+                        <field name="VAR">i</field>
+                    </shadow>
+                </value> 
+                <value name="FROM">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+                <value name="BY">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+        `}
             ${categorySeparator}
-        ` : null}
     </category>
     `;
 };
@@ -712,8 +745,8 @@ const myBlocks = function () {
     <category
         name="%{BKY_CATEGORY_MYBLOCKS}"
         id="myBlocks"
-        colour="#FF6680"
-        secondaryColour="#FF4D6A"
+        colour="#3a6413"
+        secondaryColour="#80b352"
         custom="PROCEDURE">
     </category>
     `;
@@ -762,7 +795,7 @@ const makeToolboxXML = function (isInitialSetup, device = null, isStage = true, 
     };
 
     const everything = [];
-
+    //const searchXML = moveCategory('search') || search();
     const motionXML = moveCategory('motion') || motion(isInitialSetup, isStage, targetId);
     const looksXML = moveCategory('looks') || looks(isInitialSetup, isStage, targetId, costumeName, backdropName);
     const soundXML = moveCategory('sound') || sound(isInitialSetup, isStage, targetId, soundName);
@@ -779,7 +812,7 @@ const makeToolboxXML = function (isInitialSetup, device = null, isStage = true, 
             ${eventBlock[device.type]}
             ${categorySeparator}
         </category>
-    `;
+     `;
         everything.push(
             xmlOpen,
             eventsXML, gap,
@@ -791,6 +824,7 @@ const makeToolboxXML = function (isInitialSetup, device = null, isStage = true, 
     } else {
         everything.push(
             xmlOpen,
+            //searchXML,gap,
             motionXML, gap,
             looksXML, gap,
             soundXML, gap,

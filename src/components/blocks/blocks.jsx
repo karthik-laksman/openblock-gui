@@ -24,4 +24,6 @@ BlocksComponent.propTypes = {
     containerRef: PropTypes.func,
     dragOver: PropTypes.bool
 };
-export default BlocksComponent;
+export default BlocksComponent;  
+
+

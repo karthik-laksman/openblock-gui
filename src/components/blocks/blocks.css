@@ -97,3 +97,12 @@
     min-width: auto;
     min-height: auto;
 }
+.searchBox {
+    width: 90%;
+    padding: 5px;
+    margin: 5px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    display: block;
+}

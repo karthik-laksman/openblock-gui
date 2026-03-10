@@ -120,7 +120,7 @@
 }
 
 .tab:hover {
-  background-color: $ui-primary;
+ /* background-color: $ui-primary;*/background-color: $pen-primary;
 }
 
 .tab.is-selected {
@@ -132,7 +132,7 @@
 
 .tab img {
     width: 1.375rem;
-    filter: grayscale(100%);
+    filter: grayscale(50%);
 }
 
 [dir="ltr"] .tab img {
