@@ -5,7 +5,9 @@ import locales from 'openblock-l10n';
 import styles from './language-selector.css';
 
 // supported languages to exclude from the menu, but allow as a URL option
-const ignore = [];
+//const ignore = [];  uncomment this line to show all languages in the language selector, including those that are not fully translated.
+// Only show English in the language selector.
+const ignore = Object.keys(locales).filter(l => l !== 'en');
 
 const LanguageSelector = ({currentLocale, label, onChange}) => (
     <select

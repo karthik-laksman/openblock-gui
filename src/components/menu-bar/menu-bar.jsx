@@ -352,7 +352,8 @@ class MenuBar extends React.Component {
         window.open('https://community.openblock.cc');
     }
     handleClickOpenWiki () {
-        window.open('https://wiki.openblock.cc');
+        const wikiUrl = this.props.wikiUrl || 'https://wiki.openblock.cc';
+        window.open(wikiUrl);
     }
     restoreOptionMessage (deletedItem) {
         switch (deletedItem) {
@@ -916,12 +917,14 @@ class MenuBar extends React.Component {
                                 onRequestClose={this.props.onRequestCloseSetting}
                             >
                                 <MenuSection>
-                                    <MenuItem
-                                        isRtl={this.props.isRtl}
-                                        onClick={this.handleCheckUpdate}
-                                    >
-                                        {checkUpdate}
-                                    </MenuItem>
+                                    {this.props.showCheckUpdate !== false ? (    //check update menu item will only show when showCheckUpdate is true, and hide when showCheckUpdate is false or undefined.
+                                        <MenuItem
+                                            isRtl={this.props.isRtl}
+                                            onClick={this.handleCheckUpdate}
+                                        >
+                                            {checkUpdate}
+                                        </MenuItem>
+                                    ) : null}
                                     <MenuItem
                                         isRtl={this.props.isRtl}
                                         onClick={this.handleClearCache}
@@ -1006,6 +1009,8 @@ MenuBar.propTypes = {
     onClickSave: PropTypes.func,
     onClickSaveAsCopy: PropTypes.func,
     onClickCheckUpdate: PropTypes.func,
+    showCheckUpdate: PropTypes.bool,
+    wikiUrl: PropTypes.string,
     onClickClearCache: PropTypes.func,
     onClickInstallDriver: PropTypes.func,
     onLogOut: PropTypes.func,
@@ -1055,6 +1060,8 @@ MenuBar.propTypes = {
 MenuBar.defaultProps = {
     logo: openblockLogo,
     logoSmall: openblockLogoSmall,
+    showCheckUpdate: false,   // make this true for check update menu item show in setting menu
+    wikiUrl: 'https://www.betatech.in/',
     onShare: () => {}
 };
 

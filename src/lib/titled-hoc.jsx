@@ -46,7 +46,8 @@ const TitledHOC = function (WrappedComponent) {
         handleReceivedProjectTitle (requestedTitle) {
             let newTitle = requestedTitle;
             if (newTitle === null || typeof newTitle === 'undefined') {
-                newTitle = this.props.intl.formatMessage(messages.defaultProjectTitle);
+                // Force the desktop default project title regardless of translation files
+                newTitle = 'Autoblox Project';
             }
             this.props.onChangedProjectTitle(newTitle);
             return newTitle;
